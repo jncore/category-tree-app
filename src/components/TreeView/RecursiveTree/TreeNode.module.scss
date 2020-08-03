@@ -1,0 +1,41 @@
+$color-dark: #333;
+
+.parent,
+.child {
+    position: relative;
+}
+
+.parent {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+.child {
+    margin: 0.5rem;
+    padding: 0.5rem;
+
+    &::before,
+    &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+    }
+
+    &::before {
+        border-top: 1px solid $color-dark;
+        top: 0.5rem;
+        width: 0.5rem;
+        height: 0;
+    }
+
+    &::after {
+        border-left: 1px solid $color-dark;
+        height: 100%;
+        width: 0px;
+        top: -0.5rem;
+    }
+}
+
+.title {
+    padding: 0.5rem;
+}
