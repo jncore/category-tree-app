@@ -1,8 +1,8 @@
 import { v4 as uuid } from 'uuid';
 
-import { Tree } from '../../../../src/models/tree';
+import { TreeNode } from '@/models/tree';
 
-export const DUMMY_TREE_DATA: Tree = [
+export const DUMMY_TREE_DATA: TreeNode[] = [
     {
         key: uuid(),
         title: 'Lorem',
@@ -26,6 +26,14 @@ export const DUMMY_TREE_DATA: Tree = [
                                     {
                                         key: uuid(),
                                         title: 'Odio',
+                                    },
+                                    {
+                                        key: uuid(),
+                                        title: 'Odio2',
+                                    },
+                                    {
+                                        key: uuid(),
+                                        title: 'Odio3',
                                     },
                                 ],
                             },

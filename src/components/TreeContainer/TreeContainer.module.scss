@@ -1,0 +1,42 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.container {
+    background: $freeze-purple;
+    font-family: $font-family;
+    padding: 2rem;
+}
+
+.heading {
+    align-items: center;
+    display: flex;
+    font-size: $font-size-xl;
+    justify-content: space-between;
+    margin-bottom: 2rem;
+}
+
+.switchButton,
+.downloadButton {
+    background: none;
+    border: 1px solid $dark;
+    font-size: $font-size-m;
+    outline: none;
+    padding: 0.5rem 2rem;
+    text-transform: uppercase;
+    transition: all 100ms ease-in;
+
+    &:hover,
+    &:focus {
+        background: $medium-purple;
+        cursor: pointer;
+    }
+
+    &:active {
+        transform: scale(1.05);
+    }
+}
+
+.downloadButton {
+    margin-bottom: 2rem;
+    width: 100%;
+}

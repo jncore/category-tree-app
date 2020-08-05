@@ -1,16 +1,16 @@
-import React, { useEffect } from 'react';
-import { GetStaticProps } from 'next';
+import React from 'react';
 import Head from 'next/head';
+import { GetStaticProps } from 'next';
 
-import TreeView from '../src/components/TreeView';
-import { Tree } from '../src/models/tree';
-import { apiHost } from '../src/constants/apiHost';
+import TreeContainer from '@/components/TreeContainer';
+import { TreeNode } from '@/models/tree';
+import { apiHost } from '@/constants/environment';
 
 interface Props {
-    categories: Tree;
+    categories: TreeNode[];
 }
 
-export default function Home(props: Props): React.FC<Props> {
+const Home: React.FC<Props> = (props: Props) => {
     return (
         <>
             <Head>
@@ -18,10 +18,10 @@ export default function Home(props: Props): React.FC<Props> {
                 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
             </Head>
 
-            <TreeView initialTreeData={props.categories} />
+            <TreeContainer initialTreeData={props.categories} />
         </>
     );
-}
+};
 
 export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }> => {
     const res = await fetch(`${apiHost}/api/categories`);
@@ -33,3 +33,5 @@ export const getStaticProps: GetStaticProps = async (): Promise<{ props: Props }
         },
     };
 };
+
+export default Home;

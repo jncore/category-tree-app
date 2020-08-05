@@ -1,0 +1,61 @@
+@import '../../styles/colors';
+@import '../../styles/fonts';
+
+.container {
+    margin-bottom: 0.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.titleInput {
+    background: $ice-cold;
+    border: 0;
+    caret-color: red;
+    color: $dark;
+    font-size: $font-size-m;
+    outline: none;
+    padding: 0.5rem;
+    transition: background-color 200ms ease-out;
+    width: 100%;
+
+    &::selection {
+        background: $ice-cold;
+        color: $freeze-purple;
+    }
+
+    &:hover,
+    &:focus {
+        background: $medium-purple;
+    }
+}
+
+.buttonContainer {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background: none;
+    height: 100%;
+
+    button {
+        background: $ice-cold;
+        border: 0;
+        border-left: 0.5rem solid $freeze-purple;
+        font-size: $font-size-m;
+        height: 100%;
+        outline: none;
+        transition: all 100ms ease-in;
+        width: 50px;
+
+        &:hover,
+        &:focus {
+            background: $medium-purple;
+            cursor: pointer;
+        }
+    }
+}
+
+.errorMessage {
+    font-size: $font-size-xs;
+    padding: 0.5rem 0;
+    color: $red;
+}
